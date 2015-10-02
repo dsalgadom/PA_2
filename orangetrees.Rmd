@@ -1,0 +1,41 @@
+---
+title: "Oranges"
+author: "Daniel Salgado Moreno and Lars Wehwald"
+date: "2 October 2015"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Oranges
+  
+  The Orange data frame has 35 rows and 3 columns of records of the growth of orange trees.
+  The columns contain infromation on the tree, its age and circunference. 
+  
+```{r histora, fig.width="4", fig.height="4", echo=FALSE}
+library('ggplot2')
+library('magrittr')
+data(orange)
+hist(orange$age, main = 'Age of orange tree')
+```
+  
+### After using the natural log for orange tree age: 
+   
+```{r histlogoragneage, fig.width="4", fig.height="4", echo=FALSE}
+library('ggplot2')
+library('magrittr')data(orange)
+log(Orange$age) %>% hist(main = "Age of orange tree")
+```
+
+### A plot ilustrating the circunference to age relation of orange trees
+```{r plot_orgcirage, fig.height="4", fig.width="4", echo=FALSE}
+library('ggplot2')
+library('magrittr')
+data(orange)
+plot(Orange$circumference, Orange$age, 
+     main = "Circumference to age relation", 
+     xlab = "Circumference of tree in certain year", 
+     ylab = "Age of tree")
+```
+
