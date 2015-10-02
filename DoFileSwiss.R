@@ -1,5 +1,5 @@
 ###########################
-# Do File ofr the First Pair Assingment
+# Do File of the First Pair Assingment
 # Lars Mehwald and Daniel Salgado Moreno
 # 2 October 2015
 ###########################
@@ -7,7 +7,13 @@
 ## First, we will set the working directory:
 setwd("~/HSoG/DataAnalysis/GitHub/PA/PA")
 
-## Second, we open one core data set to use in this exercise: Swiss
+# Second, loading of needed packages:
+library('magrittr')
+
+# Third, loading of own function:
+source('FunctionStandardDeviation.R')
+
+## Third, we open one core data set to use in this exercise: Swiss
 data(swiss)
 ?swiss
 names(swiss)
