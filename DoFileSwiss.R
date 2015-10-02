@@ -90,6 +90,14 @@ plot(log(swiss$Education), swiss$Agriculture,
 ggplot2::ggplot(swiss, aes(log(Education), Agriculture)) +
   geom_point() + geom_smooth() + theme_bw()
 
+# Linear Regression: impacts religion (Catholoc) examination scores (bivariat)?
+swissLinearModel <- lm(Examination ~ Catholic, data=swiss)
+# defining the linear model: examination (y) as a function of 
+# being catholic (x) 
+# in the data.frame swiss
+summary(swissLinearModel) # output of results: statistical significant
+rm(swissLinearModel)
+
 ## Saving the data into Comma-separated values (.csv)
 write.csv(swiss, file="~/HSoG/DataAnalysis/GitHub/PA/PA/SwissDataSet.csv", na="NA",
           row.names = FALSE)
@@ -99,6 +107,3 @@ save.image("~/HSoG/DataAnalysis/GitHub/PA/PA/WorkspaceSwiss.RData")
 
 ### Saving History into project
 savehistory("~/HSoG/DataAnalysis/GitHub/PA/PA/HistorySwiss.Rhistory")
-
-
-
