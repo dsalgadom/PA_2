@@ -1,0 +1,70 @@
+---
+title: "Swiss Fertility and Socioeconomic Indicators (1888)"
+author: "Lars Mehwald and Daniel Salgado Moreno"
+date: "2 October 2015"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### The Data
+
+This data set contains 47 observations and 6 variables: 
+
+1. Fertiliy
+2. Agriculture
+3. Examination 
+4. Education
+5. Catholic
+6. Infant.Mortality
+
+All variables are in percentage in a Range from [0; 100]  
+  
+  
+### Correlation Matrix
+```{r corrm, echo=FALSE}
+data(swiss)
+library(magrittr, dplyr)
+cor(swiss) %>% symnum()
+```
+  
+  As observed in the matrix, Education and Agriculture have a high negative correlation of around 0.6 points. 
+  
+### Distribution of Education attainment in Swiss Cantons (1888)  
+```{r hist_edu, fig.height=4, fig.width=5,echo=FALSE}
+data("swiss")
+hist(swiss$Education, main = 'Swiss Canton Education Attainment (1888)',
+      xlab='% education beyond primary school for draftees')
+```
+  
+  
+  We need to adjust the distribution for Education. This is done by using the natural logarithm of Education.  
+  
+```{r hist_logedu, fig.height=4, fig.width=5,echo=FALSE}
+data(swiss)
+library(magrittr, dplyr)
+log(swiss$Education) %>% hist(main = "Swiss Education Adjusted", xlab='Ln education beyond primary school for draftees')
+```
+  
+  Now the Agriculture frequency distribution.  
+```{r hist_agr, fig.height=4, fig.width=5,echo=FALSE}
+data("swiss")
+hist(swiss$Agriculture, main = 'Swiss Canton Males in agriculture ocupation (1888)',
+      xlab='% of males involved in agriculture as occupation')
+```
+  
+  ----  
+  
+### Relation between natural logarithm of Education and Agricultrue ocupation  
+
+```{r ggplot, fig.align='default',fig.height=4, fig.width=4, echo=FALSE}
+data("swiss")
+library(ggplot2)
+ggplot2::ggplot(swiss, aes(log(Education), Agriculture)) +
+  geom_point() + geom_smooth() + theme_bw()
+```
+  
+  
+As seen in the plot, the negative relation between percentage of population with education above primary and the percentage of the population ocupaided in the agriculture sector. 
+
