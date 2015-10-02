@@ -1,6 +1,6 @@
 ##################################
 # Pair Assignment 1
-# Lars Mehwald and Daniel Salgado
+# Lars Mehwald and Daniel Salgado Moreno
 # 02 October 2015
 ##################################
 
@@ -59,7 +59,7 @@ sderror(Orange$circumference)
 plot(Orange$circumference, Orange$age, 
      main = "Circumference to age relation", 
      xlab = "Circumference of tree in certain year", 
-     ylab="Age of tree")
+     ylab = "Age of tree")
 
 # Linear Regression: is the circumference a good predictor for age?
 OrangeLinearModel <- lm(age ~ circumference, data=Orange)
