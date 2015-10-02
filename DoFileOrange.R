@@ -22,7 +22,6 @@ class(Orange) <- "data.frame"
 #Analysis of Orange dataset
 ##################################
 
-
 # Getting to know the data frame
 ?Orange
 names(Orange)
@@ -44,8 +43,23 @@ hist(Orange$age, main = "Age of orange tree")
 rm(Orange)
 data(Orange)
 
-# Standard deviation of 6 variables
+# Variance
+var(Orange$age)
+var(Orange$circumference)
+
+# Standard deviation of three variables
 StandardDeviation(Orange)
+
+# Standard error
+sderror <- function(x) {sd(x)/sqrt(length(x))}
+sderror(Orange$age)
+sderror(Orange$circumference)
+
+# Scatter plot for relation between circumference and age
+plot(Orange$circumference, Orange$age, 
+     main = "Circumference to age relation", 
+     xlab = "Circumference of tree in certain year", 
+     ylab="Age of tree")
 
 # Linear Regression: is the circumference a good predictor for age?
 OrangeLinearModel <- lm(age ~ circumference, data=Orange)
