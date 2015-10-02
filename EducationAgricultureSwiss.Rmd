@@ -2,7 +2,7 @@
 title: "Swiss Fertility and Socioeconomic Indicators (1888)"
 author: "Lars Mehwald and Daniel Salgado Moreno"
 date: "2 October 2015"
-output: pdf_document
+output: html_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
