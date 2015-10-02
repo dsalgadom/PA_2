@@ -35,8 +35,8 @@ hist(Orange$circumference, main = "Circumference of orange tree")
 
 # The histogram revealed that the variable age is skewed:
 # therefore the variable is transformed (log)
-Orange$age <- log(Orange$age)
-hist(Orange$age, main = "Age of orange tree")
+### Daniel: I use the "%>%" to skip one step
+log(Orange$age) %>% hist(main = "Age of orange tree")
 
 # Since this this transformation did not improve the distribution,
 # the original data is used in the following
