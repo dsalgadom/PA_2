@@ -17,9 +17,7 @@ The DoFileSwiss.R contains a DoFile with instructions for a general work with th
 MarkdownTest.Rmd is a preliminary version of the final EducationAgricultureSwiss.Rmd file, which contains the final rmd code for the html and pdf documents. 
 
 We used a Rstudio Project call PA.Rproj to save our work in R. 
-HistorySwiss.Rhistory contains the complete history for the Swiss Data Set. In Addition, WorkspaceSwiss.RData saved the environment used during the work with swiss. 
-
-## Lars please add you comments here ## 
+HistorySwiss.Rhistory contains the complete history for the Swiss Data Set. In Addition, WorkspaceSwiss.RData saved the environment used during the work with swiss. Further analysis of the Orange data set was conducted in a seperate workspace and consequentially integrated in the GitHub repository. The same holds for the dynamically linked file (function to calculate the standard deviation of all variables of a data frame).
 
 ## Citation 
 R Core Team (2015). R: A language and environment for
